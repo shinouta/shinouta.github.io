@@ -1,0 +1,1 @@
+# shinouta.github.io
