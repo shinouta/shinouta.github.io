@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <!--
 ================================================================================
-  このページの編集方法（はじめに読んでください）
+  README
 ================================================================================
-  ・このファイル 1 つだけでサイト全体が出来ています。ビルドや特別なソフトは不要です。
-  ・文章を直すときは、下のほうにある「✏️ 編集：〇〇」というコメントを探し、
-    その下の文字を書き換えるだけです。HTML の知識はほとんど要りません。
-  ・< と > に挟まれた部分（タグ）は構造なので、原則そのまま残してください。
-    書き換えるのは、タグとタグの「あいだの文字」です。
-
   ▼ よく使う操作
    1. プロフィール写真を変える
         images フォルダに profile.jpg を置く（同じ名前で上書きするだけ）。
@@ -23,7 +17,7 @@
      数分で https://shinouta.github.io/ に反映されます（一番手軽）。
    ・または手元で書き換えて git add / commit / push。
 
-  ※ 見た目（色・余白・レイアウト）は css/style.css にまとめてあります。普段は触りません。
+  ※ 見た目（色・余白・レイアウト）は css/style.css にまとめてあります。
 ================================================================================
 -->
 <html lang="ja">
@@ -36,8 +30,6 @@
   <meta name="description" content="Sota Yoshino — Ph.D. student in neurolinguistics, stuttering, and LLMs at Nishimoto Lab, The University of Osaka.">
   <meta name="author" content="Sota Yoshino">
 
-  <!-- 見た目の設定（色・余白・レイアウト）は別ファイル css/style.css にまとめてあります。
-       普段は触りません。デザインを直したいときだけ css/style.css を開いてください。 -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -66,10 +58,7 @@
       <li>LLMs</li>
     </ul>
 
-    <!-- ✏️ 編集：各種リンク（ロゴ＋文字のハイパーリンク）
-         ・href="..." の中が飛び先。
-         ・<img> の src= が左のロゴ画像（images フォルダの中の SVG）。
-         ・使わない行は <li>…</li> ごと消してOK。 -->
+    <!-- ✏️ 編集：各種リンク（ロゴ＋文字のハイパーリンク） -->
     <ul class="links">
       <li><a href="mailto:yoshino.sota.8ba@ecs.osaka-u.ac.jp"><span class="ico"><img src="images/email.svg" alt=""></span>Email</a></li>
       <li><a href="https://scholar.google.com/citations?user=BEzXNr4AAAAJ"><span class="ico"><img src="images/scholar.svg" alt=""></span>Google Scholar</a></li>
@@ -91,9 +80,7 @@
          which inspires me to study it along with large language models and neuroscience.
     </section>
 
-    <!-- ✏️ 編集：お知らせ・最近の活動
-         新しい順に並べると読みやすいです。<li>…</li> を 1 行コピーして増やせます。
-         この欄が不要なら <section>…</section> ごと消してOK。 -->
+    <!-- ✏️ 編集：お知らせ・最近の活動 -->
     <section>
       <h2 class="eyebrow">News</h2>
       <ul class="news">
@@ -103,13 +90,7 @@
       </ul>
     </section>
 
-    <!-- ✏️ 編集：論文リスト
-         ▼ 1 本増やすとき：下の <li class="pub"> … </li> を 1 ブロックまるごとコピーして
-           貼り付け、中の文字を直してください。
-         ・<span class="me">…</span> で囲んだ名前は自分の名前として強調表示されます。
-         ・いちばん下の <div class="meta"> の中がリンク（ボタン）です。
-           <a href="...">Paper</a> の href が飛び先。Code などを足すときは
-           <a href="...">Code</a> のように <a>…</a> を増やせます（不要な行は消してOK）。 -->
+    <!-- ✏️ 編集：論文リスト -->
     <section>
       <h2 class="eyebrow">Publications</h2>
       <ul class="pubs">
@@ -170,16 +151,6 @@
       </ul>
     </section>
     -->
-
-    <!-- ✏️ 編集：興味・研究テーマ（<li>…</li> を足す／消す） -->
-    <section>
-      <h2 class="eyebrow">Research Interests</h2>
-      <ul class="tags">
-        <li>Neuroscience</li>
-        <li>Stuttering</li>
-        <li>Large Language Models</li>
-      </ul>
-    </section>
 
     <footer>
       <!-- ✏️ 編集：必要なら年や名前を更新 -->
