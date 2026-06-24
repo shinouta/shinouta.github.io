@@ -92,7 +92,16 @@ a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; border-rad
 .links .ico svg{ width:100%; height:100%; display:block; }
 
 /* ── 右本文 ── */
-.main{ max-width:var(--maxmain); }
+.main{
+  max-width:var(--maxmain);
+  /* 本文の後ろにうっすら白を敷いて、この範囲だけ背景アニメを薄く見せる */
+  background:rgba(255,255,255,.90);
+  /* 端を少し外側まで広げて、文字のすぐ脇で網が途切れないように
+     （左右はラッパーの余白 1.5rem に合わせ、はみ出し＝横スクロールを防ぐ） */
+  padding:1.5rem;
+  margin:-1.5rem;
+  border-radius:14px;
+}
 section{ margin:0 0 2.75rem; }
 .eyebrow{
   font-size:.74rem;
