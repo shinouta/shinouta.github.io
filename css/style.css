@@ -139,6 +139,9 @@ p{ margin:0 0 1rem; }
 .pub .meta a:focus-visible{ background:var(--accent); color:#fff; }
 .pub .meta a::after{ content:"\2197"; font-size:.85em; }   /* 末尾に ↗ */
 
+/* 外部リンク（文中）：末尾に ↗ を付けてリンクと分かりやすく */
+.exlink::after{ content:"\2197"; font-size:.8em; margin-left:.1em; vertical-align:.05em; }
+
 /* 学歴・経歴 */
 .cvlist{ list-style:none; padding:0; margin:0; }
 .cvlist li{ padding:.3rem 0; }
