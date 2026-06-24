@@ -1,0 +1,169 @@
+/* ================================================================
+   見た目の設定（スタイルシート）
+   このファイルはサイトの「色・余白・レイアウト」をまとめたものです。
+   文章を直すだけなら触る必要はありません。
+   ================================================================ */
+
+:root{
+  --bg:        #ffffff;   /* 背景 */
+  --ink:       #1b1d1e;   /* 本文の文字 */
+  --muted:     #6c7378;   /* 補足の薄い文字 */
+  --accent:    #2f5d62;   /* アクセント（リンク・見出しの線） */
+  --accent-2:  #21464a;   /* アクセント（濃い／ホバー時） */
+  --line:      #e8e6e1;   /* 区切り線 */
+  --chip-bg:   #f3f1ec;   /* 所属タグの背景 */
+  --maxmain:   42rem;     /* 本文の最大幅 */
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN",
+          "Hiragino Sans", "Yu Gothic", "Noto Sans JP", Meiryo, sans-serif;
+}
+
+*{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font);
+  font-size:17px;
+  line-height:1.65;
+  letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{ color:var(--accent); text-decoration:none; }
+a:hover{ color:var(--accent-2); text-decoration:underline; text-underline-offset:3px; }
+a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; border-radius:2px; }
+
+/* ── 全体の二段組み（左：プロフィール／右：本文） ── */
+.wrap{
+  max-width:64rem;
+  margin:0 auto;
+  padding:4rem 1.5rem 5rem;
+  display:grid;
+  grid-template-columns:17rem 1fr;
+  gap:3.5rem;
+}
+
+/* ── 左サイドバー ── */
+.side{ position:sticky; top:3rem; align-self:start; }
+.photo{
+  width:9.5rem; height:9.5rem;
+  border-radius:50%;
+  object-fit:cover;
+  background:var(--chip-bg);
+  border:1px solid var(--line);
+  display:block;
+  margin-bottom:1.25rem;
+}
+.name{ font-size:1.5rem; font-weight:700; line-height:1.25; margin:0 0 .1rem; }
+.name .ja{ display:block; font-size:1rem; font-weight:600; color:var(--muted); margin-top:.2rem; }
+.role{ color:var(--muted); font-size:.95rem; margin:.5rem 0 1rem; }
+
+.chips{ list-style:none; padding:0; margin:0 0 1.25rem; display:flex; flex-wrap:wrap; gap:.4rem; }
+.chips li{
+  background:var(--chip-bg);
+  color:#4a504f;
+  font-size:.8rem;
+  padding:.2rem .6rem;
+  border-radius:999px;
+}
+
+/* ── 各リンク：ロゴ（アイコン）＋文字のハイパーリンク ── */
+.links{ list-style:none; padding:0; margin:0; }
+.links li{ margin:.15rem 0; font-size:.95rem; }
+.links a{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  padding:.35rem .2rem;
+  border-radius:8px;
+  color:var(--ink);
+  text-decoration:none;
+}
+.links a:hover{ color:var(--accent-2); background:var(--chip-bg); }
+.links a:hover .ico{ color:var(--accent-2); }
+.links .ico{
+  flex:0 0 1.15rem;
+  width:1.15rem; height:1.15rem;
+  color:var(--muted);
+  transition:color .15s ease;
+}
+.links .ico img,
+.links .ico svg{ width:100%; height:100%; display:block; }
+
+/* ── 右本文 ── */
+.main{ max-width:var(--maxmain); }
+section{ margin:0 0 2.75rem; }
+.eyebrow{
+  font-size:.74rem;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 .9rem;
+  padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);
+}
+p{ margin:0 0 1rem; }
+
+/* お知らせ */
+.news{ list-style:none; padding:0; margin:0; }
+.news li{ display:flex; gap:.9rem; padding:.35rem 0; }
+.news .date{ flex:0 0 4.7rem; color:var(--muted); font-variant-numeric:tabular-nums; font-size:.92rem; padding-top:.05rem; }
+
+/* 論文 */
+.pubs{ list-style:none; padding:0; margin:0; }
+.pub{ padding:.2rem 0 1.1rem; }
+.pub .ttl{ font-weight:600; }
+.pub .auth{ color:var(--muted); font-size:.95rem; }
+.pub .auth .me{ color:var(--ink); font-weight:600; }
+.pub .auth .eq{ font-size:.82rem; white-space:nowrap; }   /* 共同筆頭著者の注記 */
+.pub .venue{ color:var(--muted); font-size:.92rem; font-style:italic; }
+/* Paper / Code などのリンク（押せるボタン風で「ハイパーリンク感」を強調） */
+.pub .meta{ font-size:.9rem; margin-top:.5rem; display:flex; flex-wrap:wrap; gap:.45rem; }
+.pub .meta a{
+  display:inline-flex;
+  align-items:center;
+  gap:.3rem;
+  padding:.15rem .7rem;
+  border:1px solid var(--accent);
+  border-radius:999px;
+  color:var(--accent);
+  font-size:.82rem;
+  font-weight:600;
+  line-height:1.5;
+  text-decoration:none;
+  transition:background .15s ease, color .15s ease;
+}
+.pub .meta a:hover,
+.pub .meta a:focus-visible{ background:var(--accent); color:#fff; }
+.pub .meta a::after{ content:"\2197"; font-size:.85em; }   /* 末尾に ↗ */
+
+/* 学歴・経歴 */
+.cvlist{ list-style:none; padding:0; margin:0; }
+.cvlist li{ padding:.3rem 0; }
+.cvlist .when{ color:var(--muted); font-size:.9rem; }
+
+/* 興味 */
+.tags{ list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:.45rem; }
+.tags li{ border:1px solid var(--line); border-radius:999px; padding:.25rem .75rem; font-size:.9rem; }
+
+footer{ color:var(--muted); font-size:.82rem; border-top:1px solid var(--line); padding-top:1rem; }
+
+/* ── スマホ表示（1 段組みに切り替え） ── */
+@media (max-width:780px){
+  .wrap{ grid-template-columns:1fr; gap:2.5rem; padding-top:2.5rem; }
+  .side{ position:static; text-align:center; }
+  .photo{ margin-left:auto; margin-right:auto; }
+  .chips{ justify-content:center; }
+  .links{ display:inline-block; text-align:left; }
+}
+
+/* 読み込み時のさりげない動き（動きを抑える設定の人には無効） */
+@media (prefers-reduced-motion:no-preference){
+  .main section{ animation:rise .5s ease both; }
+  .main section:nth-child(2){ animation-delay:.05s; }
+  .main section:nth-child(3){ animation-delay:.1s; }
+  .main section:nth-child(4){ animation-delay:.15s; }
+  @keyframes rise{ from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;} }
+}

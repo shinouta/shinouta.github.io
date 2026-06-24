@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!--
+================================================================================
+  このページの編集方法（はじめに読んでください）
+================================================================================
+  ・このファイル 1 つだけでサイト全体が出来ています。ビルドや特別なソフトは不要です。
+  ・文章を直すときは、下のほうにある「✏️ 編集：〇〇」というコメントを探し、
+    その下の文字を書き換えるだけです。HTML の知識はほとんど要りません。
+  ・< と > に挟まれた部分（タグ）は構造なので、原則そのまま残してください。
+    書き換えるのは、タグとタグの「あいだの文字」です。
+
+  ▼ よく使う操作
+   1. プロフィール写真を変える
+        images フォルダに profile.jpg を置く（同じ名前で上書きするだけ）。
+   2. 論文を 1 本増やす
+        「✏️ 編集：論文リスト」の中の <li>…</li> を 1 ブロックまるごとコピーして、
+        貼り付けてから中の文字を直す。
+   3. CV(PDF) を差し替える
+        uploads/resume.pdf を新しい PDF で上書きする。
+
+  ▼ 公開のしかた（どちらか）
+   ・GitHub のサイト上でこのファイルを開き、鉛筆アイコンで直接編集 →「Commit changes」。
+     数分で https://shinouta.github.io/ に反映されます（一番手軽）。
+   ・または手元で書き換えて git add / commit / push。
+
+  ※ 見た目（色・余白・レイアウト）は css/style.css にまとめてあります。普段は触りません。
+================================================================================
+-->
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ✏️ 編集：ブラウザのタブに出る文字と検索向けの説明 -->
+  <title>Sota Yoshino</title>
+  <meta name="description" content="Sota Yoshino — Ph.D student in neurolinguistics, stuttering, and LLMs at Nishimoto Lab, The University of Osaka.">
+  <meta name="author" content="Sota Yoshino">
+
+  <!-- 見た目の設定（色・余白・レイアウト）は別ファイル css/style.css にまとめてあります。
+       普段は触りません。デザインを直したいときだけ css/style.css を開いてください。 -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="wrap">
+
+  <!-- ============================================================
+       左サイドバー（写真・名前・所属・リンク）
+       ============================================================ -->
+  <aside class="side">
+
+    <!-- ✏️ 編集：プロフィール写真
+         images フォルダに profile.jpg を置けば表示されます。 -->
+    <img class="photo" src="images/profile.jpg" alt="Sota Yoshino">
+
+    <!-- ✏️ 編集：名前（英語表記＋日本語表記） -->
+    <h1 class="name">Sota Yoshino<span class="ja">吉野 草太</span></h1>
+
+    <!-- ✏️ 編集：一言の肩書き（※最新の状況に合わせて更新してください） -->
+    <p class="role">Researcher in neurolinguistics, stuttering, and LLMs</p>
+
+    <!-- ✏️ 編集：所属・場所のタグ（増減自由。<li>…</li> を足す／消す） -->
+    <ul class="chips">
+      <li>Nishimoto Lab</li>
+      <li>The University of Osaka</li>
+      <li>Osaka, Japan</li>
+    </ul>
+
+    <!-- ✏️ 編集：各種リンク（ロゴ＋文字のハイパーリンク）
+         ・href="..." の中が飛び先。
+         ・<img> の src= が左のロゴ画像（images フォルダの中の SVG）。
+         ・使わない行は <li>…</li> ごと消してOK。 -->
+    <ul class="links">
+      <li><a href="mailto:yoshino.sota.8ba@ecs.osaka-u.ac.jp"><span class="ico"><img src="images/email.svg" alt=""></span>Email</a></li>
+      <li><a href="https://scholar.google.com/citations?user=BEzXNr4AAAAJ"><span class="ico"><img src="images/scholar.svg" alt=""></span>Google Scholar</a></li>
+      <li><a href="https://github.com/shinouta"><span class="ico"><img src="images/github.svg" alt=""></span>github.com/shinouta</a></li>
+      <li><a href="https://x.com/_sota_yoshino"><span class="ico"><img src="images/x.svg" alt=""></span>@_sota_yoshino</a></li>
+      <!-- <li><a href="uploads/resume.pdf"><span class="ico"><img src="images/cv.svg" alt=""></span>CV (PDF)</a></li> -->
+    </ul>
+  </aside>
+
+  <!-- ============================================================
+       右本文
+       ============================================================ -->
+  <main class="main">
+
+    <!-- ✏️ 編集：自己紹介 -->
+    <section>
+      <h2 class="eyebrow">Profile</h2>
+      <p>I am a researcher at the Nishimoto Lab, The University of Osaka. I have a stutter,
+         which inspires me to study it along with large language models and neuroscience.
+    </section>
+
+    <!-- ✏️ 編集：お知らせ・最近の活動
+         新しい順に並べると読みやすいです。<li>…</li> を 1 行コピーして増やせます。
+         この欄が不要なら <section>…</section> ごと消してOK。 -->
+    <section>
+      <h2 class="eyebrow">News</h2>
+      <ul class="news">
+        <li><span class="date">2025.03</span><span>Co-first-authored conference paper presented at NLP 2025.</span></li>
+        <li><span class="date">2025.02</span><span>Co-first-authored preprint released on arXiv.</span></li>
+        <li><span class="date">2024.03</span><span>First-authored conference paper presented at NLP 2024.</span></li>
+      </ul>
+    </section>
+
+    <!-- ✏️ 編集：論文リスト
+         ▼ 1 本増やすとき：下の <li class="pub"> … </li> を 1 ブロックまるごとコピーして
+           貼り付け、中の文字を直してください。
+         ・<span class="me">…</span> で囲んだ名前は自分の名前として強調表示されます。
+         ・いちばん下の <div class="meta"> の中がリンク（ボタン）です。
+           <a href="...">Paper</a> の href が飛び先。Code などを足すときは
+           <a href="...">Code</a> のように <a>…</a> を増やせます（不要な行は消してOK）。 -->
+    <section>
+      <h2 class="eyebrow">Publications</h2>
+      <ul class="pubs">
+
+        <li class="pub">
+          <div class="ttl">Triple-Phase Transition: 脳との関係から捉える大規模言語モデルの学習ダイナミクス</div>
+          <div class="auth">中木 裕子*‡, 多田 圭吾*, <span class="me">吉野 草太</span>*, 西本 伸志†, 高木 優† <span class="eq">(*Equal first author, †Equal corresponding author, ‡Team lead)</span></div>
+          <div class="venue">言語処理学会 第31回年次大会 (NLP), 2025</div>
+          <div class="meta"><a href="https://www.anlp.jp/proceedings/annual_meeting/2025/pdf_dir/E10-5.pdf">PDF</a></div>
+        </li>
+
+        <li class="pub">
+          <div class="ttl">Triple Phase Transitions: Understanding the Learning Dynamics of Large Language Models from a Neuroscience Perspective</div>
+          <div class="auth">Yuko Nakagi*‡, Keigo Tada*, <span class="me">Sota Yoshino</span>*, Shinji Nishimoto†, Yu Takagi† <span class="eq">(*Equal first author, †Equal corresponding author, ‡Team lead)</span></div>
+          <div class="venue">arXiv preprint, 2025</div>
+          <div class="meta"><a href="https://doi.org/10.48550/arXiv.2502.20779">Paper</a></div>
+        </li>
+
+        <li class="pub">
+          <div class="ttl">超伝導材料の転移温度予測における事例間の繋がりを考慮した知識グラフの有効性の調査</div>
+          <div class="auth"><span class="me">吉野 草太</span>, 旭 良司, 三輪 誠, 佐々木 裕</div>
+          <div class="venue">言語処理学会 第30回年次大会 (NLP), 2024</div>
+          <div class="meta"><a href="https://www.anlp.jp/proceedings/annual_meeting/2024/pdf_dir/P6-27.pdf">PDF</a></div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- ✏️ 編集：学歴 -->
+    <section>
+      <h2 class="eyebrow">Education</h2>
+      <ul class="cvlist">
+        <li>
+          <div>Ph.D. Candidate in Neuroscience, The University of Osaka</div>
+          <div class="when">2024 – present (Expected 2029)</div>
+        </li>
+        <li>
+          <div>M.Eng., The University of Osaka</div>
+          <div class="when">2026</div>
+        </li>
+        <li>
+          <div>B.Eng. in Computer Science, Toyota Technological Institute</div>
+          <div class="when">2024</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ✏️ 編集：経歴・所属（任意）
+         不要なら <section>…</section> ごと消してOK。NICT など必要に応じて追記してください。 -->
+    <!--
+    <section>
+      <h2 class="eyebrow">Experience</h2>
+      <ul class="cvlist">
+        <li>
+          <div>所属や役職をここに書く</div>
+          <div class="when">2024 – present</div>
+        </li>
+      </ul>
+    </section>
+    -->
+
+    <!-- ✏️ 編集：興味・研究テーマ（<li>…</li> を足す／消す） -->
+    <section>
+      <h2 class="eyebrow">Research Interests</h2>
+      <ul class="tags">
+        <li>Neuroscience</li>
+        <li>Stuttering</li>
+        <li>Large Language Models</li>
+      </ul>
+    </section>
+
+    <footer>
+      <!-- ✏️ 編集：必要なら年や名前を更新 -->
+      © 2026 Sota Yoshino
+    </footer>
+
+  </main>
+</div>
+</body>
+</html>
